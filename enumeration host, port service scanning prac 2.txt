@@ -1,0 +1,38 @@
+2. Enumeration host,port,service scanning
+
+1. Launch Kali Linux 
+2. Select Application > Information Gathering > Nmap, as shown in the figure.
+
+$ sudo su
+nmap -sP 192.198.5.0/24
+nmap -sS 192.168.10.1    
+nmap -sSV -O 198.168.1.1 -oN enum.txt
+#after that open the enum.txt file from home
+cat enum.txt
+nmap -sSV 192.168.2.1 -oN Enumeration.txt
+cat Enumeration.txt
+#after that open the enum.txt file from home
+
+Then 'Nmap' will scan all the nodes on the given network range and display all the hosts that 
+are running, as shown in figure.
+4. Type "nmap-sS <IP address of the target machine>", and press Enter, as shown in figure 
+(here we used 192.xx.xx.xx as the IP address)
+Then a Stealthy syn scan will be initiated, and all the open ports that are running on the 
+machine will be displayed, as shown in figure.
+Now we can see all the open ports along with the services.
+We will find version of each of these services running on the open port by performing a syn 
+with version detection switch.
+5. Type "nmap -sSV -O <IP address of the target machine>", and press Enter, 
+Now, the Nmap performs the scan and displays the versions of the services, 
+We have found the enumerated result. We will now save the scan result.
+6. Type "nmap sSV -O <IP address of the target machine> oN Enumeration.txt", and press 
+Enter, as shown in figure.
+Nmap will now perform Stealthy Scan with version and OS detection, and save the result in a 
+text file (Enumeration.txt) , which will be located on home (root) directory
+7. Click on Places > Home Folder
+8. Double click on the file Enumeration.txt, as shown in fi
+Then the following window will appear, as shown in figure.
+You can also check the scanning result in the command line terminal.
+Type "cat Enumeration.txt", and press Enter, as shown in figure.
+Then the output of the scanning process will be shown in the command line terminal, as 
+shown in figure.
